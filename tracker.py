@@ -37,6 +37,30 @@ print(f"Total:\t\t{total_calories}")
 print(f"Average:\t{average_calories}")
 print(status_msg)
 
+save = input("\nWould you like to save this session to a file? (yes/no): ").strip().lower()
+
+import datetime
+
+if save == 'yes':
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    filename = f"calorie_log{timestamp}.txt"
+
+    with open(filename, "w") as file:
+        file.write("Daily Calorie Tracker Log\n")
+        file.write(f"Date: {datetime.datetime.now()}\n\n")
+        file.write("Meal Name\tCalories\n")
+        file.write("-" * 30 + "\n")
+        for meal, cal in zip(meal_names, calorie_amounts):
+            file.write(f"{meal}\t\t{cal}\n")
+        file.write("-" * 30 + "\n")
+        file.write(f"Total:\t\t{total_calories}\n")
+        file.write(f"Average:\t{average_calories}\n")
+        file.write(status_msg + "\n")
+
+    print(f"Session saved to {filename}")
+else:
+    print("Session not saved.")
+
 
 
 
