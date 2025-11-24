@@ -1,0 +1,12 @@
+Daily Calorie Tracker Log
+Date: 2025-10-07 22:33:23.406574
+
+Meal Name	Calories
+------------------------------
+lunch		700.0
+snaks		500.0
+dinner		800.0
+------------------------------
+Total:		2000.0
+Average:	666.6666666666666
+Warning: You have exceeded your daily limit by 200.0 calories.
